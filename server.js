@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
 });
 
 // Todo Item Endpoints
+    // all endpoints testing using postman !!
 
 // create a todo item
 app.post('/todo-items', async (req, res) => {
@@ -77,7 +78,7 @@ app.patch('/todo-items/:id', async (req, res) => {
     try {
         const todoItemId = req.params.id;
         const updates = req.body;
-        const todoItem = await ToDoItem.findByIdAndUpdate(todoItemId, updates, { new: true });
+        const todoItem = await ToDoItem.findByIdAndUpdate(todoItemId, updates, { new: true }); // TODO maybe remove new: true ?
         
         if (!todoItem) {
             return res.status(404).send();
