@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const ToDoItem = require('./models/TodoItem');
+
 const app = express();
 const port = 5001;
 
@@ -29,18 +31,23 @@ app.get('/', (req, res) => {
 
 // create a todo item
 app.post('/todo-items', async (req, res) => {
+    console.log("create todo item endpoint reached")
+
     try {
         const todoItem = new ToDoItem(req.body);
         await todoItem.save();
         // TODO do I need to define how todoItem is sent somewhere?
         res.status(201).send(todoItem);
     } catch (error) {
+        console.log(error)
         res.status(400).send(error);
     }
 });
 
 // get all todo items
 app.get('/todo-items', async (req, res) => {
+    console.log("get all todo items endpoint reached");
+
     try {
       const todoItems = await ToDoItem.find({});
       res.status(200).send(todoItems);

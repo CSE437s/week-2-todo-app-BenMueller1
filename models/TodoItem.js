@@ -11,10 +11,10 @@ const TodoItemSchema = new mongoose.Schema({
     required: false,
     trim: true
   },
-  status: {
-    type: String,
-    enum: ['unstarted', 'in progress', 'completed'],
-    default: 'unstarted'
+  completed: {
+    type: Boolean,
+    default: 'unstarted',
+    required: true
   },
   dueDate: {
     type: Date,
