@@ -1,3 +1,31 @@
+# Instructions to run locally
+My plan was to use MERN (react FE, express BE, mongoDB) with tailwind. I build out a working express backend (I will provide everything you need to test it using postman) and I began working on a frontend. Unfortunately, I ran out of time to go through and sync the backend and frontend up, so the frontend doesn't have the ability to add / remove todo list items.
+
+###  Running backend:
+In root directory after doing "npm install", just run "npm start"
+I set up mongodb atlas to allow connections from any ip, so I'm hoping you can connect
+You can test each of the 5 endpoints using Postman or something similar:
+1. POST request to localhost:5001/todo-items with body:
+{
+  "title": "Grocery Shopping 2",
+  "description": "Buy groceries for the week",
+  "completed": false,
+  "dueDate": "2024-01-30",
+  "priority": 5
+}
+2. GET request to localhost:5001/todo-items should return all items you've made
+3. GET request to localhost:5001/todo-items/65b059484809436dbb65736f will return one todo list item
+4. PATCH request to localhost:5001/todo-items/65b059484809436dbb65736f with the following body will update the description
+{
+    "description": "updated description"
+}
+
+5. DELETE request to localhost:5001/todo-items/65b059484809436dbb65736f will delete that same item, so please do this after testing number 3 and 4 because 3 and 4 will break once you do
+
+### Running frontend:
+Change into the client directory, do npm install, then do npm start
+
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/hVfz7S7L)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=13518481&assignment_repo_type=AssignmentRepo)
 # CSE 437s Week 2: Build a To-Do App

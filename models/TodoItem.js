@@ -13,7 +13,6 @@ const TodoItemSchema = new mongoose.Schema({
   },
   completed: {
     type: Boolean,
-    default: 'unstarted',
     required: true
   },
   dueDate: {

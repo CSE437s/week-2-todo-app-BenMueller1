@@ -11,7 +11,7 @@ function CreateNewTodoItemForm() {
     const newToDo = { title, description };
 
     try {
-        const response = await fetch('http://localhost:5000/todo-items', { 
+        const response = await fetch('http://localhost:500`/todo-items', { 
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -37,6 +37,7 @@ function CreateNewTodoItemForm() {
   return (
     <div>
         <h2 className='text-left text-2xl'>Create New ToDo</h2>
+        <h6> sadly doens't work since I haven't been able to hook backend to frontend yet :(</h6>
         
         <form className="mb-4" onSubmit={handleSubmit}>
         <input 

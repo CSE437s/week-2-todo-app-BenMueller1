@@ -48,8 +48,8 @@ app.post('/todo-items', async (req, res) => {
 // get all todo items
 app.get('/todo-items', async (req, res) => {
     console.log("get all todo items endpoint reached");
-
     try {
+
       const todoItems = await ToDoItem.find({});
       res.status(200).send(todoItems);
     } catch (error) {
