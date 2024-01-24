@@ -6,7 +6,7 @@ const port = 5001;
 
 app.use(express.json());
 
-const uri = "mongodb+srv://BenMueller1:Milky007%23@sweworkshoptodoapp.zror4eb.mongodb.net/?retryWrites=true&w=majority"
+const uri = "mongodb+srv://BenMueller1:Milky007@sweworkshoptodoapp.zror4eb.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose.connect(uri, { 
   useNewUrlParser: true, 
